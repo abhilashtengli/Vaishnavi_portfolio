@@ -73,7 +73,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="">
+      <div className="mt-9 pb-5">
         <div className="py-12 lg:pl-44 lg:pr-32 flex justify-center items-center ">
           <motion.div
             ref={ref}

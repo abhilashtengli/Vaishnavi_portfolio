@@ -17,7 +17,7 @@ export const education = [
     id: "3",
     year: "March 2021-2025",
     class: "BACHELORE OF ENGINNERING (CSE.)",
-    score: "8.5 CGPA (AVG)",
+    score: "8.5 CGPA (AVG upto 6th Sem)",
     institute: "Guru Nanak Dev Engineering Bidar",
   },
 ];

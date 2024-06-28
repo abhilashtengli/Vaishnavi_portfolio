@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link as ScrollLink } from "react-scroll";
@@ -86,63 +86,79 @@ const Header = () => {
           onClick={() => setMenuOpen(!menuOpen)}
         />
       </div>
-      {menuOpen && (
-        <div className="grid place-content-center fixed top-0 left-0 z-20 h-screen w-full bg-[#10101a]  lg:hidden">
-          <ul className="border-black text-center text-2xl text-gray-300 font-semibold">
-            <li className="px-4 py-2">
-              <ScrollLink
-                to="about"
-                smooth={true}
-                duration={500}
-                onClick={() => setMenuOpen(false)}
-              >
-                About
-              </ScrollLink>
-            </li>
-            <li className="px-4 py-2">
-              <ScrollLink
-                to="learning"
-                smooth={true}
-                duration={500}
-                onClick={() => setMenuOpen(false)}
-              >
-                Learning Experience
-              </ScrollLink>
-            </li>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{
+              y: -1000,
+            }}
+            animate={{
+              y: 0,
+            }}
+            transition={{
+              duration: 0.5,
+            }}
+            exit={{
+              y: -1000,
+            }}
+            className="grid place-content-center fixed top-0 left-0 z-20 h-screen w-full bg-[#10101a]  lg:hidden"
+          >
+            <ul className="border-black text-center text-2xl text-gray-300 font-semibold">
+              <li className="px-4 py-2">
+                <ScrollLink
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  About
+                </ScrollLink>
+              </li>
+              <li className="px-4 py-2">
+                <ScrollLink
+                  to="learning"
+                  smooth={true}
+                  duration={500}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Learning Experience
+                </ScrollLink>
+              </li>
 
-            <li className="px-4 py-2">
-              <ScrollLink
-                to="skills"
-                smooth={true}
-                duration={500}
-                onClick={() => setMenuOpen(false)}
-              >
-                Skills
-              </ScrollLink>
-            </li>
-            <li className="px-4 py-2">
-              <ScrollLink
-                to="projects"
-                smooth={true}
-                duration={500}
-                onClick={() => setMenuOpen(false)}
-              >
-                Projects
-              </ScrollLink>
-            </li>
-            <li className="px-4 py-2">
-              <ScrollLink
-                to="contact"
-                smooth={true}
-                duration={500}
-                onClick={() => setMenuOpen(false)}
-              >
-                Contact
-              </ScrollLink>
-            </li>
-          </ul>
-        </div>
-      )}
+              <li className="px-4 py-2">
+                <ScrollLink
+                  to="skills"
+                  smooth={true}
+                  duration={500}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Skills
+                </ScrollLink>
+              </li>
+              <li className="px-4 py-2">
+                <ScrollLink
+                  to="projects"
+                  smooth={true}
+                  duration={500}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Projects
+                </ScrollLink>
+              </li>
+              <li className="px-4 py-2">
+                <ScrollLink
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Contact
+                </ScrollLink>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

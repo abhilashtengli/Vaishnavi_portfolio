@@ -38,19 +38,22 @@ const Body = () => {
           }}
         >
           <h2 className="text-2xl font-semibold my-4">Hello, I am</h2>
-          <h1 className="text-6xl font-bold tracking-wider my-4">
+          <h1 className="lg:text-[4rem] text-4xl font-bold tracking-wider my-4">
             Vaishnavi Akkanna
           </h1>
           <p className="text-2xl font-semibold my-4">
             I'm Passionate Full-Stack{" "}
             <span className="text-[#2fbf71]">Developer.</span>
           </p>
-          <p className="text-gray-300 mt-4">
-            I develop a user-friendly AngularJS application from scratch for
+          <p className="text-gray-300 mt-4 text-justify">
+            A passinate software engineer with sound knowledge in frontend and
+            backend techs and developments.
           </p>
-          <p className="text-gray-300">
+          <p className="text-gray-300 text-justify">
             {" "}
-            clients and I am interested in learning and creating new features.
+            An enthusiastic and dedicated computer science engineer to apply my
+            tech stack knowledge to solve <br className="lg:block hidden" />{" "}
+            societal problems with user friendly and technical solutions
           </p>
           <motion.button
             className="px-5 py-1 mb-20 mt-8 relative rounded-sm text-sm hover:shadow-2xl hover:shadow-green-600/[0.5] transition duration-200 border-2 border-white"
@@ -81,7 +84,7 @@ const Body = () => {
           }}
         >
           <img
-            className=" w-72 h-72 object-cover rounded-full lg:ml-20 "
+            className=" w-72 h-72 object-cover rounded-full lg:ml-20 lg:mt-0 -mt-8"
             alt="img"
             src={v_pik}
           />
